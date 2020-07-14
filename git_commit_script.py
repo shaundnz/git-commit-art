@@ -57,7 +57,7 @@ def main():
 
     # Push the commits to remote repository
     remote_repo = "https://github.com/" + arguments.username + "/" + arguments.name + ".git"
-    subprocess.run(["git", "remote", "add", "origin", "git@github.com:sonotshaun/testing-art.git"])
+    subprocess.run(["git", "remote", "add", "origin", "git@github.com:" + arguments.username + "/" + arguments.name + ".git"])
     subprocess.run(["git", "push", "-u", "origin", "master"])
 
 
