@@ -42,7 +42,6 @@ def main():
 
     # Init the git repo
     subprocess.run(["git", "init"])
-
     # Create and open README.md, the add it to be versioned
     file = open(os.path.join(os.getcwd(), "README.md"), "a+")
     subprocess.run(["git", "add", "README.md"])
