@@ -8,6 +8,7 @@ def set_args():
         description="Create a new git repo and make commits to create art in Github's activity graph")
     parser.add_argument("-N", "--name", type=str, required=False, default="dummy_repo",
                         help="Name of new repo, creates new directory with same in CWD name to hold local repo")
+    parser.add_argument("-U", "--username", type=str, required=False, help="GitHub username")
     return parser.parse_args()
 
 
@@ -42,7 +43,7 @@ def main():
     # Init the git repo
     subprocess.run(["git", "init"])
 
-    # Create and open README.md, the add it
+    # Create and open README.md, the add it to be versioned
     file = open(os.path.join(os.getcwd(), "README.md"), "a+")
     subprocess.run(["git", "add", "README.md"])
 
