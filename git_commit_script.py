@@ -5,7 +5,7 @@ from datetime import datetime
 from datetime import timedelta
 
 commit_one_week = [1,2,3,4,5,6,7]
-COMMIT_MULTIPLIER = 2
+COMMIT_MULTIPLIER = 4
 
 SPACE_INVADER = [ [0, 0, 0, 1, 1, 1, 0],  # 0
                   [0, 0, 1, 1, 0, 0, 0],  # 1
@@ -47,8 +47,8 @@ def get_first_sunday(date):
 def change_and_commit(commit_date):
     file = open(os.path.join(os.getcwd(), "README.md"), "a+")
     file.write("making art + \n\n")
-    subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "testing commit", '--date', commit_date.strftime('"%Y-%m-%d %H:%M:%S"')])
+    subprocess.run(["git", "add", "."], stdout=subprocess.DEVNULL)
+    subprocess.run(["git", "commit", "-m", "testing commit", '--date', commit_date.strftime('"%Y-%m-%d %H:%M:%S"')], stdout=subprocess.DEVNULL)
 
 def main():
     arguments = set_args()
